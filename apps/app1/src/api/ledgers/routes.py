@@ -3,7 +3,7 @@ from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-
+from config import DATABASE_URL  # Import the DATABASE_URL from config.py
 from core.db.session import get_db
 from core.ledgers.operations import validate_transaction, add_ledger_entry, calculate_balance
 from core.ledgers.schemas import LedgerEntry, BaseLedgerOperation
@@ -11,7 +11,6 @@ from core.ledgers.schemas import LedgerOperationRequest, LedgerBalanceResponse
 
 router = APIRouter()
 
-DATABASE_URL = "postgresql://postgres:mysecretpassword@localhost:5432/monorepo"
 engine = create_engine(DATABASE_URL)
 
 

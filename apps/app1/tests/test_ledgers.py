@@ -14,17 +14,17 @@ client = TestClient(app)
 
 
 def test_get_balance():
-    response = client.get("/api/v1/ledger/user123")
+    response = client.get("/api/v1/ledger/user129")
     assert response.status_code == 200
     assert "balance" in response.json()
 
 
 def test_add_ledger_entry():
     response = client.post("/api/v1/ledger", json={
-        "owner_id": "user123",
+        "owner_id": "user113",
         "operation": "DAILY_REWARD",
         "amount": 1,
-        "nonce": "abc123"
+        "nonce": "abc113"
     })
     assert response.status_code == 200
     assert response.json() == {"message": "Ledger entry added successfully"}

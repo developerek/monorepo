@@ -6,16 +6,15 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..
 sys.path.append(project_root)
 
 # Confirm that the root path is added correctly (optional)
-print("Project Root Path:", project_root)
-print("sys.path:", sys.path)
+
 # Add the project root directory to the Python path
 from alembic import context
 from sqlalchemy import create_engine
 from core.db.base import Base
-
+from config import DATABASE_URL  # Import the DATABASE_URL from config.py
 
 config = context.configure
-engine = create_engine("postgresql://postgres:mysecretpassword@localhost:5432/monorepo")
+engine = create_engine(DATABASE_URL)
 target_metadata = Base.metadata
 
 
