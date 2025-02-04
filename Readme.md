@@ -46,7 +46,4 @@ This project is a **shared ledger system** designed for a monorepo containing mu
 
 ### Installation
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+
